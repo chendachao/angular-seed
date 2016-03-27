@@ -19,12 +19,16 @@ module.exports = function(config){
       'test/unit/components/**/*.spec.js',
       'test/unit/view*/**/*.spec.js',
       
-      // templates
-      'app/tpl/**/*.html'
+      // html templates
+      'app/tpl/**/*.html',
+      
+      // mocked json api
+      'app/api/**/*.json'
     ],
     
     preprocessors: {
-    	'app/tpl/*.html': 'ng-html2js'
+    	'app/tpl/*.html': ['ng-html2js'],
+    	'app/api/*.json': ['ng-json2js']
     },
     
     ngHtml2JsPreprocessor: {
@@ -53,6 +57,16 @@ module.exports = function(config){
       moduleName: 'templates'
     },
     
+    ngJson2JsPreprocessor: {
+    	stripPrefix: 'app/api/',
+    	prependPrefix: 'served/'
+    	 /* or define a custom transform function
+         */
+//    	cacheIdFromPath: function(filepath) {
+//    		return cacheId;
+//    	}
+    },
+    
     autoWatch : true,
 
     frameworks: ['jasmine'],
@@ -64,7 +78,8 @@ module.exports = function(config){
             'karma-firefox-launcher',
             'karma-jasmine',
             'karma-junit-reporter',
-	        'karma-ng-html2js-preprocessor'
+            'karma-ng-html2js-preprocessor',
+	        'karma-ng-json2js-preprocessor'
             ],
     repoters: ['progress', 'junit'],
     junitReporter : {

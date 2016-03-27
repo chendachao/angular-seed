@@ -77,7 +77,6 @@ describe('myApp.version.tabs-directive', function() {
     titles.eq(1).find('a').click();
 
     // second title should be active
-    debugger
     expect(titles.eq(0)).not.toHaveClass('active');
     expect(titles.eq(1)).toHaveClass('active');
 
