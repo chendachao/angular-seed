@@ -5,7 +5,7 @@ describe('myApp.version.tabs-directive', function() {
   beforeEach(module('myApp.version'));
 
   // load the templates
-	beforeEach(module('templates'));
+	beforeEach(module('karma.templates'));
 
   beforeEach(inject(function($rootScope, $compile) {
     // we might move this tpl into an html file as well...
