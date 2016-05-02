@@ -7,3 +7,5 @@ tmp
 .idea
 .project
 .settings/*
+report/
+test-results.xml

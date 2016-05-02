@@ -12,16 +12,16 @@ angular.module('myApp.version.perogative-directive', [])
             console.log('in controller');
         },
         link : function(scope, element, attrs) {
-
+            
             scope.perogative = 'Click Me';
 
             scope.updateButton = function() {
                 scope.perogative = 'My Other Perogative';
-            }
+            };
 
             scope.dblClickUpdate = function() {
                 scope.perogative = 'My Other Other Perogative';
-            }
+            };
 
         }
     }

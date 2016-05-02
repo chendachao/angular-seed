@@ -10,6 +10,7 @@ module.exports = function(config){
       'app/bower_components/jquery/dist/jquery.js',
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       
@@ -23,15 +24,34 @@ module.exports = function(config){
       
       // html templates
       'app/tpl/**/*.html',
-      
-      // mocked json api
-      'app/api/**/*.json'
+
+      // will handle with json2js
+      'app/fixtures/api/json2js/*.json',
+
+        // will handle with html2js
+      'app/fixtures/api/html2js/*.json',
+
+      // will load json with jasmine-jquery
+      {
+        pattern: 'app/fixtures/api/jasmine-jquery/*.json',
+        included: false
+      },
+        
+        // load image
+      {
+        pattern: 'app/images/*.jpg',
+        watched: false,
+        included: false,
+        served: true,
+        nocache: false
+      }
     ],
-    
+
     preprocessors: {
-    	'app/!(bower_components)/**/*.js': ['jshint', 'coverage'],
+    	'app/!(bower_components)/**/*.js': ['jshint'],
     	'app/tpl/*.html': ['ng-html2js'],
-    	'app/api/*.json': ['ng-json2js']
+    	'app/fixtures/api/html2js/*.json': ['ng-html2js'],
+    	'app/fixtures/api/json2js/*.json': ['ng-json2js']
     },
     
     ngHtml2JsPreprocessor: {
@@ -61,7 +81,7 @@ module.exports = function(config){
     },
     
     ngJson2JsPreprocessor: {
-    	stripPrefix: 'app/api/',
+    	stripPrefix: 'app/fixtures/api/json2js/',
     	prependPrefix: 'served/'
     	 /* or define a custom transform function
          */
@@ -74,7 +94,8 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome', 'Firefox', 'IE'],
+    // browsers : ['Chrome', 'Firefox', 'IE', 'PhantomJS'],
+    browsers : ['Chrome'],
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
@@ -88,43 +109,7 @@ module.exports = function(config){
     //         'karma-ng-html2js-preprocessor',
 	 //        'karma-ng-json2js-preprocessor'
     //         ],
-    reporters: ['progress', 'junit', 'coverage'],
-    // coverageReporter: {
-    //   type: 'html',
-    //   dir: coverageDir + 'html',
-    //   subdir: function (browser) {
-    //    
-    //     return browser;
-    //   }
-    // },
-    coverageReporter: {
-      dir: report + coverageDir,
-      reporters: [
-        { type: 'clover', subdir: 'report-clover'},   // add the prefix report- just don't let you mislead
-        { type: 'cobertura', subdir: 'report-cobertura'}, // xml format supported by Jenkins
-        { type: 'html', subdir: function (browser) {
-          return 'report-html/'+ browser; 
-        }},
-        // { type: 'in-memory', subdir: 'report-in-memory'},
-        { type: 'json', subdir: 'report-json'},
-        { type: 'json-summary', subdir: 'report-json-summary'},
-        { type: 'lcov', subdir: 'report-lcov'}, // (lcov and html) list coverage
-        // { type: 'lcovonly', subdir: 'report-lcovonly'},
-        // { type: 'none', subdir: 'report-none'},
-        { type: 'teamcity', subdir: 'report-teamcity'}, // see output
-        { type: 'text', subdir: 'report-text', file: 'text.txt'}, // text table with details
-        { type: 'text-lcov', subdir: 'report-text-lcov'},
-        { type: 'text-summary', subdir: 'report-text-summary', file: 'text-summary.txt'}  // just a text summary
-        ]
-    },
-    junitReporter : {
-      outputDir: report, // results will be saved as $outputDir/$browserName.xml
-      outputFile: report + 'junit-reporter/unit.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
-      suite: 'unit', // suite will become the package name attribute in xml testsuite element
-      useBrowserName: true, // add browser name to report and classes names
-      nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
-      classNameFormatter: undefined // function (browser, result) to customize the classname attribute in xml testcase element
-    }
+    reporters: ['progress', 'junit']
 
   });
 };

@@ -1,3 +1,29 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [angular-seed — the seed for AngularJS apps](#angular-seed-%E2%80%94-the-seed-for-angularjs-apps)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Clone angular-seed](#clone-angular-seed)
+    - [Install Dependencies](#install-dependencies)
+    - [Run the Application](#run-the-application)
+  - [Directory Layout](#directory-layout)
+  - [Testing](#testing)
+    - [Running Unit Tests](#running-unit-tests)
+    - [End to end testing](#end-to-end-testing)
+  - [Updating Angular](#updating-angular)
+  - [Loading Angular Asynchronously](#loading-angular-asynchronously)
+  - [Serving the Application Files](#serving-the-application-files)
+    - [Running the App during Development](#running-the-app-during-development)
+    - [Running the App in Production](#running-the-app-in-production)
+  - [Continuous Integration](#continuous-integration)
+    - [Travis CI](#travis-ci)
+    - [CloudBees](#cloudbees)
+  - [Contact](#contact)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # angular-seed — the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
