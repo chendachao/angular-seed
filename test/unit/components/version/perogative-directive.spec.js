@@ -2,7 +2,7 @@ describe('myApp.version.perogative-directive', function () {
 
 
     describe('perogative directive', function () {
-        var elm, scope, $compile, $httpBackend, $q, servedData;
+        var elm, scope, $compile, $httpBackend, $q, servedData, controller;
 
         function compileElement() {
             elm = angular.element(elm);
@@ -64,8 +64,13 @@ describe('myApp.version.perogative-directive', function () {
 
 
                   elm = '<div my-perogative></div>';
+                  
+                  debugger
 
                   compileElement();
+
+                  // get direcitve's controller by input directive's name 
+                  controller = elm.controller('myPerogative');
               })
           });
 

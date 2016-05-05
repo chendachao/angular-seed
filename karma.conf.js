@@ -109,7 +109,16 @@ module.exports = function(config){
     //         'karma-ng-html2js-preprocessor',
 	 //        'karma-ng-json2js-preprocessor'
     //         ],
-    reporters: ['progress', 'junit']
+    reporters: ['progress', 'junit'],
+
+    junitReporter : {
+      outputDir: 'report', // results will be saved as $outputDir/$browserName.xml
+      outputFile: 'report/' + 'junit-reporter/unit.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
+      suite: 'unit', // suite will become the package name attribute in xml testsuite element
+      useBrowserName: true, // add browser name to report and classes names
+      nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
+      classNameFormatter: undefined // function (browser, result) to customize the classname attribute in xml testcase element
+    }
 
   });
 };

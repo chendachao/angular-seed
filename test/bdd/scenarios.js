@@ -6,10 +6,8 @@ describe('my app', function() {
 
 
   it('should automatically redirect to /view1 when location hash/fragment is empty', function() {
+   debugger
     browser.get('index.html');
-    // browser.pause();  // like debugger keyword
-    //
-    // browser.debugger(); // like set breakpoint in devTools
     expect(browser.getLocationAbsUrl()).toMatch("/view1");
   });
 
@@ -22,7 +20,6 @@ describe('my app', function() {
 
 
     it('should render view1 when user navigates to /view1', function() {
-
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 1/);
     });

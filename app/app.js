@@ -6,11 +6,11 @@ angular.module('myApp', [
   'ngResource',
   'myApp.view1',
   'myApp.view2',
-  'myApp.version'
+  'myApp.version' 
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/view1'});
-}])
+}]) 
 .controller('BeerCounter', function($scope, $locale) {
   $scope.beers = [0, 1, 2, 3, 4, 5, 6];
   if ($locale.id == 'en-us') {

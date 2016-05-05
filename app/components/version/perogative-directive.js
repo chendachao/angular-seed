@@ -9,6 +9,8 @@ angular.module('myApp.version.perogative-directive', [])
         templateUrl : 'tpl/perogative.html',
         scope : true,
         controller: function ($scope) {
+            var vm = this;
+            vm.say = 'Hello';
             console.log('in controller');
         },
         link : function(scope, element, attrs) {
