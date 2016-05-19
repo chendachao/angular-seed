@@ -75,6 +75,7 @@ describe('myApp.version.perogative-directive', function () {
           });
 
           fit('Test mocked json api & json2js plugin', function () {
+              debugger
                expect(servedData).toEqual({
                  prop: 'val'
              });
