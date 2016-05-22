@@ -21,7 +21,7 @@ module.exports = function(config) {
       {pattern: 'tests/unit/bdd/features/*.feature', include: false},
 
       // Include JS files with step definitions and any other files they require
-      'tests/unit/bdd/features/step_definitions/*.js'
+      'tests/unit/bdd/frontend_specs/**/*.steps.js'
     ],
 
 
@@ -29,9 +29,9 @@ module.exports = function(config) {
     exclude: [
     ],
 
-    // client: { // Specify this if you want to test features/scenarios with certain tags only
-    //   args: ['--tags', '@frontend']
-    // },
+    client: { // Specify this if you want to test features/scenarios with certain tags only
+      args: ['--tags', '@frontend']
+    },
 
 
     // test results reporter to use
