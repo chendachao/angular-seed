@@ -1,0 +1,12 @@
+[
+  {
+    "basePath": "api/html2js/",
+    "prefix": "",
+    "suffix": ".json",
+    "data": {
+      "handle": "",
+      "from": "",
+      "authors": ""
+    }
+  }
+]
