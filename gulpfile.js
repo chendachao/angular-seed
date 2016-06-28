@@ -95,7 +95,7 @@ gulp.task('sourcemaps:revision', function () {
     gulp.src('app/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(rev())
-        .pipe(concat('index.min.js'))   // concat all the files from src in index.min.js
+        .pipe(concat('index.min.js'))   // concat all the files from src to index.min.js
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/sourcemaps'))
 });

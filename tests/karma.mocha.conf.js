@@ -1,27 +1,36 @@
-// Karma configuration
-// Generated on Sun May 22 2016 13:21:27 GMT+0800 (China Standard Time)
 
 module.exports = function(config) {
 
-  var report = 'report/',
+  var basePath = '../',
+      report = 'report/',
       coverageDir = 'coverage/';
 
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '../',
+    basePath: basePath,
+
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['cucumber-js'],
+    frameworks: ['mocha', 'chai'],
+
 
     // list of files / patterns to load in the browser
     files: [
-        // Feature files to test
-      {pattern: 'tests/unit/bdd/features/*.feature', include: false},
 
-      // Include JS files with step definitions and any other files they require
-      'tests/unit/bdd/frontend_specs/**/*.steps.js'
+      // tests
+      'tests/unit/mocha/*.spec.js',
+
+    ],
+    
+    plugins: [
+        'karma-mocha',
+        'karma-sinon',
+        'karma-chai',
+        'karma-chrome-launcher',
+        'karma-junit-reporter',
+        'karma-mocha-reporter'
     ],
 
 
@@ -29,18 +38,21 @@ module.exports = function(config) {
     exclude: [
     ],
 
-    client: { // Specify this if you want to test features/scenarios with certain tags only
-      args: ['--tags', '@frontend']
-    },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'bdd-json'],  // Specify this reporter if you need to integrate test results into living documentation
+    reporters: ['progress', 'mocha'],
 
-    bddJSONReporter: {
-      outputFile: 'report/bdd/results.json'   // 'results.json' will be filled with all scenarios test results
+    // reporter options
+    mochaReporter: {
+      showDiff: true,
+      colors: {
+        success: 'blue',
+        info: 'bgGreen',
+        warning: 'cyan',
+        error: 'bgRed'
+      }
     },
 
     // web server port
