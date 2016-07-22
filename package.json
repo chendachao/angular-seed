@@ -1,5 +1,9 @@
 {
   "name": "angular-seed",
+  "config": {
+	"reporter": "xunit",
+	"reporter2": "spec"
+  },
   "private": true,
   "version": "0.0.0",
   "description": "A starter proyject for AngularJS",
@@ -67,6 +71,11 @@
     "zombie": "^4.2.1"
   },
   "scripts": {
+	"test2": "mocha test/",
+	"test3": "mocha test/ --reporter $npm_package_config_reporter # win %",
+	"test:xunit": "npm run test -- --reporter xunit",
+	"test:xunit2": "npm run test -- --reporter xunit",
+	"test:dev": "npm run test --angular-seed:reporter2=spec",
     "postinstall2": "bower prune && bower install && bower update",
     "postinstall": "bower install",
     "prestart": "npm install",

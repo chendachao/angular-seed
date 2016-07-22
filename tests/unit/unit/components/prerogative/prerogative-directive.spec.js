@@ -68,6 +68,7 @@ describe('app.prerogative.prerogative-directive', function () {
 
         // karma-read-json
         beforeEach(function () {
+            debugger
            var karmaReadJSON = readJSON('app/api/jasmine-jquery/handle.json');
         });
 

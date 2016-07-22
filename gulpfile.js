@@ -25,7 +25,7 @@ var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
     cleanCss = require('gulp-clean-css'),
     minifyHtml = require('gulp-minify-html');
-
+	
 // Get version using NodeJs file system
 var getVersion = function () {
     return fs.readFileSync('Version');
