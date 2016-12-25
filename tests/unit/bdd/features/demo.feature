@@ -1,3 +1,4 @@
+@frontend
 Feature: Test feature to explain how execute a script in cucumber test
   Scenario: Test scenario with javascript
     Given there is a test step
