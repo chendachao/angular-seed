@@ -12,15 +12,15 @@ module.exports = function(config){
     
     files : [
       // libraries
-      'bower_components/jquery/dist/jquery.js',
-      'bower_components/angular/angular.js',
-      'bower_components/angular-route/angular-route.js',
-      'bower_components/angular-resource/angular-resource.js',
-      'bower_components/angular-mocks/angular-mocks.js',
-      'bower_components/jasmine-jquery/lib/jasmine-jquery.js',
+      'node_modules/jquery/dist/jquery.js',
+      'node_modules/angular/angular.js',
+      'node_modules/angular-route/angular-route.js',
+      'node_modules/angular-resource/angular-resource.js',
+      'node_modules/angular-mocks/angular-mocks.js',
+      'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
 
       // if karma-ng-html2js-preprocessor need more time to convert json to js then this is a better choice
-      'bower_components/karma-read-json/karma-read-json.js',
+      'node_modules/karma-read-json/karma-read-json.js',
 
       // app
       'app/app.js',
