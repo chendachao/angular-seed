@@ -42,12 +42,12 @@
     "deploy": "bash ./bin/deploy.sh"
   },
   "dependencies": {
-    "angular": "1.6.1",
-    "angular-loader": "1.6.1",
-    "angular-mocks": "1.6.1",
-    "angular-resource": "1.6.1",
-    "angular-route": "1.6.1",
-    "html5-boilerplate": "0.0.1",
+    "angular": "~1.5.0",
+    "angular-loader": "~1.5.0",
+    "angular-mocks": "~1.5.0",
+    "angular-resource": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "html5-boilerplate": "^5.3.0",
     "jasmine-jquery": "2.1.1",
     "karma-read-json": "1.1.0"
   },
