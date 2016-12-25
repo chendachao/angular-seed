@@ -9,7 +9,8 @@ angular.module('app', [
     'app.version',
     'app.tabs',
     'app.prerogative'
-]).config(['$routeProvider', function ($routeProvider) {
+]).config(['$locationProvider,', '$routeProvider', function ($locationProvider, $routeProvider) {
+    $locationProvider.hashPrefix('!');
     $routeProvider.otherwise({redirectTo: '/view1'});
 }])
     .controller('BeerCounter', function ($scope, $locale) {
