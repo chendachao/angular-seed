@@ -26,7 +26,6 @@
     "unit-test": "node_modules/.bin/karma start tests/karma.conf.js",
     "unit-test-bdd": "node_modules/.bin/karma start tests/karma.cucumber.conf.js",
     "unit-test-code-coverage-report": "node_modules/.bin/karma start tests/karma.coverage.conf.js",
-    "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
     "protractor": "protractor tests/e2e/e2e/protractor.conf.js",
