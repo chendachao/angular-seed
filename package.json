@@ -86,6 +86,7 @@
     "nodemon": "1.11.0",
     "phantomjs-prebuilt": "2.1.14",
     "protractor": "4.0.14",
+    "protractor-jasmine2-html-reporter": "0.0.6",
     "reactify": "1.1.1",
     "shelljs": "0.7.5",
     "sinon": "1.17.6",

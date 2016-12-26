@@ -1,3 +1,5 @@
+var Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
+
 exports.config = {
   allScriptsTimeout: 11000,
 
@@ -16,5 +18,14 @@ exports.config = {
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000,
     showColors: true
+  },
+  
+  onPrepare: function () {
+    jasmine.getEnv().addReporter(
+      new Jasmine2HtmlReporter({
+        savePath: 'report/e2e/',
+        screenshotsFolder: 'screenshots'
+      })
+    );
   }
 };
