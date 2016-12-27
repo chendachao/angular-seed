@@ -88,6 +88,7 @@
     "nodemon": "1.11.0",
     "phantomjs-prebuilt": "2.1.14",
     "protractor": "4.0.14",
+    "protractor-cucumber-framework": "0.6.0",
     "protractor-jasmine2-html-reporter": "0.0.6",
     "protractor-jasmine2-screenshot-reporter": "0.3.2",
     "reactify": "1.1.1",
